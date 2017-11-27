@@ -8,7 +8,6 @@ Library           Selenium2Library
 
 *** Test Cases ***
 Valid Login
-    # Go To 			http://www.google.com
     Open Browser To Login Page
     Input Username    demo
     Input Password    mode

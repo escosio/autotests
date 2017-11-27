@@ -1,112 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20171125 16:01:26.545" generator="Robot 3.0.2 (Python 2.7.10 on darwin)">
-<suite source="/Users/scottd/webdemo/login_tests/valid_login.robot" id="s1" name="Valid Login">
-<test id="s1-t1" name="Valid Login">
-<kw name="Open Browser To Login Page" library="resource">
+<robot generated="20171126 20:01:17.466" generator="Robot 3.0.2 (Python 2.7.10 on darwin)">
+<suite source="/Users/scottd/autotests/login_tests/seatgeek.robot" id="s1" name="Seatgeek">
+<test id="s1-t1" name="Home page check">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
 <arguments>
-<arg>${LOGIN URL}</arg>
-<arg>${BROWSER}</arg>
+<arg>https://seatgeek.com/</arg>
 </arguments>
-<msg timestamp="20171125 16:01:26.720" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:7272/'</msg>
-<status status="PASS" endtime="20171125 16:01:28.704" starttime="20171125 16:01:26.719"></status>
+<msg timestamp="20171126 20:01:18.808" level="INFO">Opening browser 'firefox' to base url 'https://seatgeek.com/'</msg>
+<status status="PASS" endtime="20171126 20:01:28.485" starttime="20171126 20:01:18.808"></status>
 </kw>
-<kw name="Maximize Browser Window" library="Selenium2Library">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20171125 16:01:28.830" starttime="20171125 16:01:28.705"></status>
-</kw>
-<kw name="Set Selenium Speed" library="Selenium2Library">
-<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
 <arguments>
-<arg>${DELAY}</arg>
+<arg>Millions of tickets in one place.</arg>
 </arguments>
-<status status="PASS" endtime="20171125 16:01:28.831" starttime="20171125 16:01:28.830"></status>
+<status status="PASS" endtime="20171126 20:01:28.545" starttime="20171126 20:01:28.485"></status>
 </kw>
-<kw name="Login Page Should Be Open" library="resource">
-<kw name="Title Should Be" library="Selenium2Library">
-<doc>Verifies that current page title equals `title`.</doc>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
 <arguments>
-<arg>Login Page</arg>
+<arg>id=search-input</arg>
 </arguments>
-<msg timestamp="20171125 16:01:28.838" level="INFO">Page title is 'Login Page'.</msg>
-<status status="PASS" endtime="20171125 16:01:28.839" starttime="20171125 16:01:28.831"></status>
+<status status="PASS" endtime="20171126 20:01:28.568" starttime="20171126 20:01:28.546"></status>
 </kw>
-<status status="PASS" endtime="20171125 16:01:28.839" starttime="20171125 16:01:28.831"></status>
-</kw>
-<status status="PASS" endtime="20171125 16:01:28.839" starttime="20171125 16:01:26.719"></status>
-</kw>
-<kw name="Input Username" library="resource">
-<arguments>
-<arg>demo</arg>
-</arguments>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
 <arguments>
-<arg>username_field</arg>
-<arg>${username}</arg>
+<arg>id=search-input</arg>
+<arg>Knicks</arg>
 </arguments>
-<msg timestamp="20171125 16:01:28.840" level="INFO">Typing text 'demo' into text field 'username_field'</msg>
-<status status="PASS" endtime="20171125 16:01:29.088" starttime="20171125 16:01:28.839"></status>
+<msg timestamp="20171126 20:01:28.568" level="INFO">Typing text 'Knicks' into text field 'id=search-input'</msg>
+<status status="PASS" endtime="20171126 20:01:28.649" starttime="20171126 20:01:28.568"></status>
 </kw>
-<status status="PASS" endtime="20171125 16:01:29.088" starttime="20171125 16:01:28.839"></status>
-</kw>
-<kw name="Input Password" library="resource">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
 <arguments>
-<arg>mode</arg>
+<arg>css=.ui-sgautocomplete</arg>
 </arguments>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" endtime="20171126 20:01:29.108" starttime="20171126 20:01:28.649"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
 <arguments>
-<arg>password_field</arg>
-<arg>${password}</arg>
+<arg>css=.sgautocomplete-result</arg>
 </arguments>
-<msg timestamp="20171125 16:01:29.089" level="INFO">Typing text 'mode' into text field 'password_field'</msg>
-<status status="PASS" endtime="20171125 16:01:29.180" starttime="20171125 16:01:29.088"></status>
+<msg timestamp="20171126 20:01:29.108" level="INFO">Clicking element 'css=.sgautocomplete-result'.</msg>
+<status status="PASS" endtime="20171126 20:01:31.374" starttime="20171126 20:01:29.108"></status>
 </kw>
-<status status="PASS" endtime="20171125 16:01:29.181" starttime="20171125 16:01:29.088"></status>
-</kw>
-<kw name="Submit Credentials" library="resource">
-<kw name="Click Button" library="Selenium2Library">
-<doc>Clicks a button identified by `locator`.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
 <arguments>
-<arg>login_button</arg>
+<arg>New York Knicks Tickets</arg>
 </arguments>
-<msg timestamp="20171125 16:01:29.183" level="INFO">Clicking button 'login_button'.</msg>
-<status status="PASS" endtime="20171125 16:01:29.599" starttime="20171125 16:01:29.182"></status>
+<status status="PASS" endtime="20171126 20:01:31.427" starttime="20171126 20:01:31.374"></status>
 </kw>
-<status status="PASS" endtime="20171125 16:01:29.599" starttime="20171125 16:01:29.181"></status>
-</kw>
-<kw name="Welcome Page Should Be Open" library="resource">
 <kw name="Location Should Be" library="Selenium2Library">
 <doc>Verifies that current URL is exactly `url`.</doc>
 <arguments>
-<arg>${WELCOME URL}</arg>
+<arg>https://seatgeek.com/new-york-knicks-tickets</arg>
 </arguments>
-<msg timestamp="20171125 16:01:29.606" level="INFO">Current location is 'http://localhost:7272/welcome.html'.</msg>
-<status status="PASS" endtime="20171125 16:01:29.606" starttime="20171125 16:01:29.601"></status>
-</kw>
-<kw name="Title Should Be" library="Selenium2Library">
-<doc>Verifies that current page title equals `title`.</doc>
-<arguments>
-<arg>Welcome Page</arg>
-</arguments>
-<msg timestamp="20171125 16:01:29.610" level="INFO">Page title is 'Welcome Page'.</msg>
-<status status="PASS" endtime="20171125 16:01:29.610" starttime="20171125 16:01:29.607"></status>
-</kw>
-<status status="PASS" endtime="20171125 16:01:29.610" starttime="20171125 16:01:29.600"></status>
+<msg timestamp="20171126 20:01:31.433" level="INFO">Current location is 'https://seatgeek.com/new-york-knicks-tickets'.</msg>
+<status status="PASS" endtime="20171126 20:01:31.434" starttime="20171126 20:01:31.427"></status>
 </kw>
 <kw type="teardown" name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20171125 16:01:30.973" starttime="20171125 16:01:29.611"></status>
+<status status="PASS" endtime="20171126 20:01:31.669" starttime="20171126 20:01:31.434"></status>
 </kw>
-<status status="PASS" endtime="20171125 16:01:30.973" critical="yes" starttime="20171125 16:01:26.718"></status>
+<status status="PASS" endtime="20171126 20:01:31.670" critical="yes" starttime="20171126 20:01:18.807"></status>
 </test>
 <doc>A test suite with a single test for valid login.
 
 This test has a workflow that is created using keywords in
 the imported resource file.</doc>
-<status status="PASS" endtime="20171125 16:01:30.974" starttime="20171125 16:01:26.558"></status>
+<status status="PASS" endtime="20171126 20:01:31.671" starttime="20171126 20:01:17.501"></status>
 </suite>
 <statistics>
 <total>
@@ -116,7 +83,7 @@ the imported resource file.</doc>
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Valid Login" pass="1">Valid Login</stat>
+<stat fail="0" id="s1" name="Seatgeek" pass="1">Seatgeek</stat>
 </suite>
 </statistics>
 <errors>
