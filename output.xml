@@ -1,89 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20171126 20:01:17.466" generator="Robot 3.0.2 (Python 2.7.10 on darwin)">
-<suite source="/Users/scottd/autotests/login_tests/seatgeek.robot" id="s1" name="Seatgeek">
-<test id="s1-t1" name="Home page check">
+<robot generated="20180107 12:54:53.577" generator="Robot 3.0.2 (Python 2.7.10 on darwin)">
+<suite source="/Users/scottd/autotests/tests/features/seatgeek.robot" id="s1" name="Seatgeek">
+<test id="s1-t1" name="Login">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
 <arguments>
 <arg>https://seatgeek.com/</arg>
+<arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20171126 20:01:18.808" level="INFO">Opening browser 'firefox' to base url 'https://seatgeek.com/'</msg>
-<status status="PASS" endtime="20171126 20:01:28.485" starttime="20171126 20:01:18.808"></status>
+<msg timestamp="20180107 12:54:54.253" level="INFO">Opening browser 'Chrome' to base url 'https://seatgeek.com/'</msg>
+<status status="PASS" endtime="20180107 12:55:04.081" starttime="20180107 12:54:54.252"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="Selenium2Library">
 <doc>Waits until `text` appears on current page.</doc>
 <arguments>
 <arg>Millions of tickets in one place.</arg>
 </arguments>
-<status status="PASS" endtime="20171126 20:01:28.545" starttime="20171126 20:01:28.485"></status>
-</kw>
-<kw name="Focus" library="Selenium2Library">
-<doc>Sets focus to element identified by `locator`.</doc>
-<arguments>
-<arg>id=search-input</arg>
-</arguments>
-<status status="PASS" endtime="20171126 20:01:28.568" starttime="20171126 20:01:28.546"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<arguments>
-<arg>id=search-input</arg>
-<arg>Knicks</arg>
-</arguments>
-<msg timestamp="20171126 20:01:28.568" level="INFO">Typing text 'Knicks' into text field 'id=search-input'</msg>
-<status status="PASS" endtime="20171126 20:01:28.649" starttime="20171126 20:01:28.568"></status>
+<status status="PASS" endtime="20180107 12:55:04.103" starttime="20180107 12:55:04.082"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="Selenium2Library">
 <doc>Waits until element specified with `locator` is visible.</doc>
 <arguments>
-<arg>css=.ui-sgautocomplete</arg>
+<arg>css=.login-button</arg>
 </arguments>
-<status status="PASS" endtime="20171126 20:01:29.108" starttime="20171126 20:01:28.649"></status>
+<status status="PASS" endtime="20180107 12:55:04.132" starttime="20180107 12:55:04.103"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
-<arg>css=.sgautocomplete-result</arg>
+<arg>css=.login-button</arg>
 </arguments>
-<msg timestamp="20171126 20:01:29.108" level="INFO">Clicking element 'css=.sgautocomplete-result'.</msg>
-<status status="PASS" endtime="20171126 20:01:31.374" starttime="20171126 20:01:29.108"></status>
+<msg timestamp="20180107 12:55:04.133" level="INFO">Clicking element 'css=.login-button'.</msg>
+<status status="PASS" endtime="20180107 12:55:04.213" starttime="20180107 12:55:04.132"></status>
 </kw>
-<kw name="Wait Until Page Contains" library="Selenium2Library">
-<doc>Waits until `text` appears on current page.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
 <arguments>
-<arg>New York Knicks Tickets</arg>
+<arg>name=email</arg>
 </arguments>
-<status status="PASS" endtime="20171126 20:01:31.427" starttime="20171126 20:01:31.374"></status>
+<status status="PASS" endtime="20180107 12:55:04.493" starttime="20180107 12:55:04.213"></status>
 </kw>
-<kw name="Location Should Be" library="Selenium2Library">
-<doc>Verifies that current URL is exactly `url`.</doc>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
 <arguments>
-<arg>https://seatgeek.com/new-york-knicks-tickets</arg>
+<arg>name=email</arg>
+<arg>${email}</arg>
 </arguments>
-<msg timestamp="20171126 20:01:31.433" level="INFO">Current location is 'https://seatgeek.com/new-york-knicks-tickets'.</msg>
-<status status="PASS" endtime="20171126 20:01:31.434" starttime="20171126 20:01:31.427"></status>
+<msg timestamp="20180107 12:55:04.493" level="INFO">Typing text 'scottd26@gmail.com' into text field 'name=email'</msg>
+<status status="PASS" endtime="20180107 12:55:04.837" starttime="20180107 12:55:04.493"></status>
 </kw>
-<kw type="teardown" name="Close Browser" library="Selenium2Library">
-<doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20171126 20:01:31.669" starttime="20171126 20:01:31.434"></status>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20180107 12:55:06.839" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180107 12:55:06.839" starttime="20180107 12:55:04.838"></status>
 </kw>
-<status status="PASS" endtime="20171126 20:01:31.670" critical="yes" starttime="20171126 20:01:18.807"></status>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>name=password</arg>
+<arg>${pw}</arg>
+</arguments>
+<msg timestamp="20180107 12:55:06.840" level="INFO">Typing text 'scott123' into text field 'name=password'</msg>
+<status status="PASS" endtime="20180107 12:55:06.984" starttime="20180107 12:55:06.840"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=.login-register__left-pane__signup-button</arg>
+</arguments>
+<msg timestamp="20180107 12:55:06.985" level="INFO">Clicking element 'css=.login-register__left-pane__signup-button'.</msg>
+<status status="PASS" endtime="20180107 12:55:07.125" starttime="20180107 12:55:06.985"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>css=.profile-circle</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180107 12:55:13.341" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180107 12:55:13.341" starttime="20180107 12:55:12.165"></status>
+</kw>
+<msg timestamp="20180107 12:55:13.359" level="FAIL">Element locator 'css=.profile-circle' did not match any elements after 5 seconds</msg>
+<status status="FAIL" endtime="20180107 12:55:13.362" starttime="20180107 12:55:07.126"></status>
+</kw>
+<kw type="teardown" name="Delete All Cookies" library="Selenium2Library">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" endtime="20180107 12:55:13.590" starttime="20180107 12:55:13.362"></status>
+</kw>
+<status status="FAIL" endtime="20180107 12:55:13.590" critical="yes" starttime="20180107 12:54:54.252">Element locator 'css=.profile-circle' did not match any elements after 5 seconds</status>
 </test>
 <doc>A test suite with a single test for valid login.
 
 This test has a workflow that is created using keywords in
 the imported resource file.</doc>
-<status status="PASS" endtime="20171126 20:01:31.671" starttime="20171126 20:01:17.501"></status>
+<status status="FAIL" endtime="20180107 12:55:13.592" starttime="20180107 12:54:53.592"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Seatgeek" pass="1">Seatgeek</stat>
+<stat fail="1" id="s1" name="Seatgeek" pass="0">Seatgeek</stat>
 </suite>
 </statistics>
 <errors>

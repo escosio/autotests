@@ -1,6 +1,5 @@
 #!/bin/bash
 
 echo "Tests are starting"
-robot login_tests/valid_login.robot
-robot login_tests/seatgeek.robot
+robot tests/features/*
 echo "Test are finished running"

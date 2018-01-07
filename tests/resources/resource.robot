@@ -15,6 +15,8 @@ ${VALID PASSWORD}    mode
 ${LOGIN URL}      http://${SERVER}/
 ${WELCOME URL}    http://${SERVER}/welcome.html
 ${ERROR URL}      http://${SERVER}/error.html
+${email}          scottd26@gmail.com
+${pw}             scott123
 
 *** Keywords ***
 Open Browser To Login Page
